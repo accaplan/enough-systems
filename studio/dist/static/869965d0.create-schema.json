@@ -1,0 +1,358 @@
+[
+  {
+    "options": {
+      "collapsible": false,
+      "collapsed": false
+    },
+    "fields": [
+      {
+        "description": "To make a single line-break within a paragraph, press SHIFT + ENTER",
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "fields": [
+                    {
+                      "name": "href",
+                      "type": "string"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Emphasis"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              },
+              {
+                "value": "h1",
+                "title": "H1"
+              },
+              {
+                "value": "h2",
+                "title": "H2"
+              },
+              {
+                "value": "h3",
+                "title": "H3"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "fields": [
+              {
+                "name": "caption",
+                "type": "text"
+              }
+            ],
+            "type": "image"
+          }
+        ],
+        "name": "content",
+        "type": "array",
+        "title": "Content editor"
+      }
+    ],
+    "name": "contentEditor",
+    "type": "object",
+    "title": "Content editor"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "collapsible": false,
+          "collapsed": false
+        },
+        "name": "introText",
+        "type": "contentEditor",
+        "title": "Intro text"
+      },
+      {
+        "name": "featuredImage",
+        "type": "image",
+        "title": "Featured Image (metadata)"
+      },
+      {
+        "options": {
+          "collapsible": false,
+          "collapsed": false
+        },
+        "name": "content",
+        "type": "contentEditor",
+        "title": "Content (metadata)"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "page"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to page"
+          }
+        ],
+        "name": "pages",
+        "type": "array"
+      }
+    ],
+    "name": "page-list",
+    "type": "document",
+    "title": "Page list"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "name": "featuredImage",
+        "type": "image"
+      },
+      {
+        "options": {
+          "collapsible": false,
+          "collapsed": false
+        },
+        "name": "content",
+        "type": "contentEditor"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "page",
+    "type": "document"
+  },
+  {
+    "initialValue": {
+      "type": "article"
+    },
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "layout": "tags"
+        },
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "what",
+        "type": "array"
+      },
+      {
+        "options": {
+          "layout": "tags"
+        },
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "with",
+        "type": "array"
+      },
+      {
+        "name": "where",
+        "type": "string"
+      },
+      {
+        "name": "when",
+        "type": "string"
+      },
+      {
+        "name": "date",
+        "type": "date",
+        "title": "Date (for sorting)"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Article",
+              "value": "article"
+            },
+            {
+              "title": "Link",
+              "value": "link"
+            },
+            {
+              "title": "File",
+              "value": "file"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "article",
+                  "link",
+                  "file"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "hidden": "conditional",
+        "name": "featuredImage",
+        "type": "image"
+      },
+      {
+        "options": {
+          "collapsible": false,
+          "collapsed": false
+        },
+        "hidden": "conditional",
+        "name": "content",
+        "type": "contentEditor"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "link",
+        "type": "url"
+      },
+      {
+        "hidden": "conditional",
+        "name": "file",
+        "type": "file"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "item",
+    "type": "document"
+  }
+]
