@@ -43,7 +43,6 @@ declare module '$env/static/private' {
 	export const npm_config_global_prefix: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const ZDOTDIR: string;
-	export const CURSOR_TRACE_ID: string;
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const MallocNanoZone: string;
 	export const COLOR: string;
@@ -52,13 +51,14 @@ declare module '$env/static/private' {
 	export const npm_config_local_prefix: string;
 	export const ZSH: string;
 	export const npm_config_python: string;
-	export const NVM_DIR: string;
 	export const USER: string;
+	export const NVM_DIR: string;
 	export const rvm_gemstone_package_file: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const rvm_path: string;
 	export const SSH_AUTH_SOCK: string;
+	export const VSCODE_PROFILE_INITIALIZED: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
 	export const rvm_proxy: string;
@@ -71,6 +71,7 @@ declare module '$env/static/private' {
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const _: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const USER_ZDOTDIR: string;
@@ -82,6 +83,7 @@ declare module '$env/static/private' {
 	export const npm_package_name: string;
 	export const rvm_sdk: string;
 	export const LANG: string;
+	export const LOCAL_GIT_DIRECTORY: string;
 	export const npm_config_npm_version: string;
 	export const VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 	export const XPC_FLAGS: string;
@@ -92,8 +94,8 @@ declare module '$env/static/private' {
 	export const rvm_version: string;
 	export const rvm_script_name: string;
 	export const rvm_pretty_print_flag: string;
-	export const SHLVL: string;
 	export const HOME: string;
+	export const SHLVL: string;
 	export const rvm_ruby_mode: string;
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const npm_config_cache: string;
@@ -112,6 +114,7 @@ declare module '$env/static/private' {
 	export const rvm_ruby_bits: string;
 	export const rvm_bin_flag: string;
 	export const rvm_only_path_flag: string;
+	export const SECURITYSESSIONID: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -164,7 +167,6 @@ declare module '$env/dynamic/private' {
 		npm_config_global_prefix: string;
 		TERM_PROGRAM_VERSION: string;
 		ZDOTDIR: string;
-		CURSOR_TRACE_ID: string;
 		ORIGINAL_XDG_CURRENT_DESKTOP: string;
 		MallocNanoZone: string;
 		COLOR: string;
@@ -173,13 +175,14 @@ declare module '$env/dynamic/private' {
 		npm_config_local_prefix: string;
 		ZSH: string;
 		npm_config_python: string;
-		NVM_DIR: string;
 		USER: string;
+		NVM_DIR: string;
 		rvm_gemstone_package_file: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		rvm_path: string;
 		SSH_AUTH_SOCK: string;
+		VSCODE_PROFILE_INITIALIZED: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
 		rvm_proxy: string;
@@ -192,6 +195,7 @@ declare module '$env/dynamic/private' {
 		PATH: string;
 		npm_package_json: string;
 		_: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		USER_ZDOTDIR: string;
@@ -203,6 +207,7 @@ declare module '$env/dynamic/private' {
 		npm_package_name: string;
 		rvm_sdk: string;
 		LANG: string;
+		LOCAL_GIT_DIRECTORY: string;
 		npm_config_npm_version: string;
 		VSCODE_GIT_ASKPASS_EXTRA_ARGS: string;
 		XPC_FLAGS: string;
@@ -213,8 +218,8 @@ declare module '$env/dynamic/private' {
 		rvm_version: string;
 		rvm_script_name: string;
 		rvm_pretty_print_flag: string;
-		SHLVL: string;
 		HOME: string;
+		SHLVL: string;
 		rvm_ruby_mode: string;
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		npm_config_cache: string;
@@ -233,6 +238,7 @@ declare module '$env/dynamic/private' {
 		rvm_ruby_bits: string;
 		rvm_bin_flag: string;
 		rvm_only_path_flag: string;
+		SECURITYSESSIONID: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;
