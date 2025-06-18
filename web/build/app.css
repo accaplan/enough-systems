@@ -1,0 +1,56 @@
+:root {
+    /* Base colors */
+    --black: rgba(30, 30, 30, 1);
+    --background: rgb(235, 248, 227);
+    --white: #f7fef5;
+    --color-border: #9d9d9d;
+    --color-hover: rgb(216, 216, 216);
+
+    /* --color-accent: #551A8B; */
+    --color-accent: rgb(124, 102, 0);
+    --color-emphasis: #727272;
+    --color-highlight: #4d877b;
+
+    /* Font families */
+    --font-sans:  'Gerstner', Helvetica, Arial, sans-serif;
+    --font-mono: 'Gerstner-Light', "courier new", "monospace";
+    
+    /* Font sizes */
+    --font-size: 18px;
+
+    @media screen and (max-width: 800px) {
+      --font-size: 14px;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: var(--color-accent);
+    /* scroll-behavior: smooth; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *::selection {
+    background: var(--grey);
+  }
+
+ body {
+    margin: 0;
+    padding: 1em;
+    font-family: var(--font-mono);
+    font-size: var(--font-size);
+    color: var(--black);
+    background-color: var(--white);
+    overscroll-behavior-y: none;
+  }
+
+  figure {
+    margin: 1em 0;
+    max-width: 90vw;
+  }
+
+  img {
+    width: 100%;
+    max-width: 90vw;
+  }

@@ -11,6 +11,8 @@
   #  to = "/index.html"
   #  status = 200
 
+  NODE_VERSION = "20"
+
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
   #[dev]

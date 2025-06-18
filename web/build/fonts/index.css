@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Gerstner-Light';
+    src: url('./Gerstner-Programm-Light.woff') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+@font-face {
+        font-family: 'Gerstner';
+        src: url('./Gerstner-Programm-Medium.otf') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    /* font-display: swap; */
+}

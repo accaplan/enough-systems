@@ -38,8 +38,8 @@ declare module '$env/static/private' {
 	export const rvm_gemstone_url: string;
 	export const TERM: string;
 	export const SHELL: string;
-	export const rvm_docs_type: string;
 	export const TMPDIR: string;
+	export const rvm_docs_type: string;
 	export const npm_config_global_prefix: string;
 	export const TERM_PROGRAM_VERSION: string;
 	export const ZDOTDIR: string;
@@ -162,8 +162,8 @@ declare module '$env/dynamic/private' {
 		rvm_gemstone_url: string;
 		TERM: string;
 		SHELL: string;
-		rvm_docs_type: string;
 		TMPDIR: string;
+		rvm_docs_type: string;
 		npm_config_global_prefix: string;
 		TERM_PROGRAM_VERSION: string;
 		ZDOTDIR: string;
