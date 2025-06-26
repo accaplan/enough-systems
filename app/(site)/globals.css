@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --site-x: 14px;
+  --site-y: 16px;
+
+  --title-lg-font-size: 16px;
+  --title-lg-line-height: 20px;
+  --title-lg-letter-spacing: -0.03em;
+
+  --title-font-size: 20px;
+  --title-line-height: 20px;
+  --title-letter-spacing: -0.03em;
+
+  --title-sm-font-size: 20px;
+  --title-sm-line-height: 20px;
+  --title-sm-letter-spacing: -0.03em;
+
+  --subtitle-font-size: 14px;
+  --subtitle-line-height: 18px;
+  --subtitle-letter-spacing: -0.03em;
+
+  --nav-font-size: 14px;
+  --nav-line-height: 16px;
+  --nav-letter-spacing: -0.03em;
+
+  --list-title-font-size: 15px;
+  --list-title-line-height: 16px;
+  --list-title-letter-spacing: -0.05em;
+
+  --eyebrow-font-size: 10px;
+  --eyebrow-line-height: 18px;
+  --eyebrow-letter-spacing: -0.03em;
+
+  --footer-font-size: 10px;
+  --footer-line-height: 12px;
+  --footer-letter-spacing: 0em;
+
+  --grid-columns: 8;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --site-x: 20px;
+    --site-y: 20px;
+
+    --title-lg-font-size: 36px;
+    --title-lg-line-height: 42px;
+    --title-lg-letter-spacing: -0.03em;
+
+    --title-font-size: 32px;
+    --title-line-height: 32px;
+    --title-letter-spacing: -0.03em;
+
+    --title-sm-font-size: 24px;
+    --title-sm-line-height: 24px;
+    --title-sm-letter-spacing: -0.03em;
+
+    --subtitle-font-size: 20px;
+    --subtitle-line-height: 24px;
+    --subtitle-letter-spacing: -0.03em;
+
+    --nav-font-size: 15px;
+    --nav-line-height: 18px;
+    --nav-letter-spacing: -0.03em;
+
+    --list-title-font-size: 16px;
+    --list-title-line-height: 20px;
+    --list-title-letter-spacing: -0.05em;
+
+    --eyebrow-font-size: 12px;
+    --eyebrow-line-height: 12px;
+    --eyebrow-letter-spacing: -0.03em;
+
+    --footer-font-size: 13px;
+    --footer-line-height: 16px;
+    --footer-letter-spacing: 0em;
+    
+    --grid-columns: 12;
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+i, em {
+  font-style: normal;
+}
+
+a:focus, button:focus {
+  outline: none;
+  border: none;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 4px;
+}
+
+@layer base {
+  .site-container {
+    @apply px-site-x pb-150;
+  }
+
+  .site-grid {
+    @apply grid grid-cols-6 gap-x-10 md:grid-cols-12 md:gap-x-20;
+  }
+
+  .grid-contain {
+    @apply grid grid-cols-1 grid-rows-1 *:col-span-1 *:row-span-1 *:col-start-1 *:row-start-1;
+  }
+
+  .site-link {
+    @apply text-current hover:underline active:underline focus-visible:underline;
+  }
+
+  .site-link--active {
+    @apply underline;
+  }
+}
+
+* {
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 3px;
+}

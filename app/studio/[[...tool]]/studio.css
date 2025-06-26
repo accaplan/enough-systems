@@ -1,0 +1,15 @@
+/* SETTINGS FOOTER */
+
+div[id^='settingsFooter'] [data-testid='pt-editor'][data-fullscreen='false'] {
+  height: 8em!important;
+}
+
+.pt-block, .pt-block * {
+  font-family: var(--font-gerstner-text)!important;
+  font-size: 16px!important;
+}
+
+html, body {
+  margin: 0!important;
+  padding: 0!important;
+}

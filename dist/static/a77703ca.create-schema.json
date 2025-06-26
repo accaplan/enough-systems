@@ -1,0 +1,1019 @@
+[
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "name": "favicon",
+        "type": "image"
+      },
+      {
+        "name": "ogImage",
+        "type": "image",
+        "title": "OG Image"
+      }
+    ],
+    "name": "settingsSeo",
+    "type": "document",
+    "title": "Global SEO"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "type": "link"
+          }
+        ],
+        "name": "links",
+        "type": "array",
+        "title": "Main Links"
+      },
+      {
+        "fields": [
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/",
+                          "/^mailto$/",
+                          "/^tel$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "url",
+            "type": "url",
+            "title": "Contact URL"
+          },
+          {
+            "of": [
+              {
+                "description": "Leave url blank for simple text",
+                "type": "externalLink",
+                "name": "row",
+                "title": "Content Row"
+              }
+            ],
+            "name": "content",
+            "type": "array",
+            "title": "Expanded Content"
+          }
+        ],
+        "name": "contact",
+        "type": "object"
+      },
+      {
+        "fields": [
+          {
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "type": "richTextSimple"
+          }
+        ],
+        "name": "information",
+        "type": "object"
+      }
+    ],
+    "name": "settingsHeader",
+    "type": "document",
+    "title": "Header"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "text",
+                "type": "richTextSimple"
+              }
+            ],
+            "type": "object",
+            "name": "column"
+          }
+        ],
+        "name": "columns",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "type": "externalLink"
+          }
+        ],
+        "name": "externalLinks",
+        "type": "array"
+      }
+    ],
+    "name": "settingsFooter",
+    "type": "document",
+    "title": "Footer"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array"
+      }
+    ],
+    "name": "settingsSplash",
+    "type": "document",
+    "title": "Splash Page Settings"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "collapsible": true,
+          "collapsed": true
+        },
+        "name": "seo",
+        "type": "seo",
+        "title": "SEO Meta"
+      },
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Black",
+                      "value": "black"
+                    },
+                    {
+                      "title": "White",
+                      "value": "white"
+                    }
+                  ],
+                  "layout": "radio",
+                  "direction": "horizontal"
+                },
+                "initialValue": "black",
+                "name": "color",
+                "type": "string",
+                "title": "Text Color"
+              },
+              {
+                "to": [
+                  {
+                    "type": "projectPage"
+                  }
+                ],
+                "name": "project",
+                "type": "reference"
+              },
+              {
+                "name": "media",
+                "type": "media"
+              }
+            ],
+            "type": "object",
+            "name": "project"
+          }
+        ],
+        "name": "featuredProjects",
+        "type": "array"
+      }
+    ],
+    "name": "homePage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "orderRank",
+        "type": "string"
+      },
+      {
+        "options": {
+          "collapsible": true,
+          "collapsed": true
+        },
+        "name": "seo",
+        "type": "seo",
+        "title": "SEO Meta"
+      },
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "to": [
+          {
+            "type": "client"
+          }
+        ],
+        "name": "client",
+        "type": "reference"
+      },
+      {
+        "name": "year",
+        "type": "date"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "service"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to service"
+          }
+        ],
+        "name": "services",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              }
+            ],
+            "type": "object",
+            "name": "collaborator"
+          }
+        ],
+        "name": "collaborators",
+        "type": "array"
+      },
+      {
+        "name": "explanation",
+        "type": "richTextSimple"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "alt",
+                "type": "string",
+                "title": "Alt Text"
+              }
+            ],
+            "type": "image"
+          },
+          {
+            "options": {
+              "accept": "video/*"
+            },
+            "fields": [
+              {
+                "name": "aspectRatio",
+                "type": "number"
+              }
+            ],
+            "type": "file",
+            "name": "video"
+          },
+          {
+            "fields": [
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "alt",
+                        "type": "string",
+                        "title": "Alt Text"
+                      }
+                    ],
+                    "type": "image"
+                  },
+                  {
+                    "options": {
+                      "accept": "video/*"
+                    },
+                    "fields": [
+                      {
+                        "name": "aspectRatio",
+                        "type": "number"
+                      }
+                    ],
+                    "type": "file",
+                    "name": "video"
+                  }
+                ],
+                "name": "media",
+                "type": "array"
+              }
+            ],
+            "type": "object",
+            "name": "mediaRow"
+          }
+        ],
+        "name": "media",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "projectPage"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to projects"
+          }
+        ],
+        "name": "related",
+        "type": "array",
+        "title": "Related Projects"
+      }
+    ],
+    "name": "projectPage",
+    "type": "document",
+    "title": "Projects"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "collapsible": true,
+          "collapsed": true
+        },
+        "name": "seo",
+        "type": "seo",
+        "title": "SEO Meta"
+      },
+      {
+        "name": "title",
+        "type": "string"
+      }
+    ],
+    "name": "worksPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "client",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      }
+    ],
+    "name": "service",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "collapsible": true,
+          "collapsed": true
+        },
+        "name": "seo",
+        "type": "seo",
+        "title": "SEO Meta"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "text",
+                "type": "richTextSimple"
+              }
+            ],
+            "type": "object",
+            "name": "textRow"
+          },
+          {
+            "fields": [
+              {
+                "name": "columnOne",
+                "type": "richTextSimple"
+              },
+              {
+                "name": "columnTwo",
+                "type": "richTextSimple"
+              }
+            ],
+            "type": "object",
+            "name": "splitTextRow"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      }
+    ],
+    "name": "infoPage",
+    "type": "document",
+    "title": "Information Page"
+  },
+  {
+    "options": {
+      "collapsible": true,
+      "collapsed": true
+    },
+    "fields": [
+      {
+        "description": "If left blank, the global site title will be used. If left blank on a project, the project title will be used.",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "description": "If left blank, the global site description will be used.",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "If left blank, the global OG Image will be used.",
+        "name": "ogImage",
+        "type": "image",
+        "title": "Open Graph Image"
+      }
+    ],
+    "name": "seo",
+    "type": "object",
+    "title": "SEO Meta"
+  },
+  {
+    "of": [
+      {
+        "marks": {
+          "annotations": [
+            {
+              "i18nTitleKey": "inputs.portable-text.annotation.link",
+              "options": {
+                "modal": {
+                  "type": "popover"
+                }
+              },
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/",
+                                "/^tel$/",
+                                "/^mailto$/"
+                              ],
+                              "allowRelative": true,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ],
+                      "level": "error"
+                    }
+                  ],
+                  "description": "A valid web, email, phone, or relative link.",
+                  "name": "href",
+                  "type": "url",
+                  "title": "Link"
+                }
+              ],
+              "name": "link",
+              "type": "object"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "strong",
+              "title": "Strong"
+            },
+            {
+              "value": "em",
+              "title": "Italic"
+            },
+            {
+              "value": "code",
+              "title": "Code"
+            },
+            {
+              "value": "underline",
+              "title": "Underline"
+            },
+            {
+              "value": "strike-through",
+              "title": "Strike"
+            }
+          ]
+        },
+        "lists": [
+          {
+            "value": "bullet",
+            "title": "Bulleted list"
+          },
+          {
+            "value": "number",
+            "title": "Numbered list"
+          }
+        ],
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          },
+          {
+            "value": "h1",
+            "title": "Heading 1"
+          },
+          {
+            "value": "h2",
+            "title": "Heading 2"
+          },
+          {
+            "value": "h3",
+            "title": "Heading 3"
+          },
+          {
+            "value": "h4",
+            "title": "Heading 4"
+          },
+          {
+            "value": "h5",
+            "title": "Heading 5"
+          },
+          {
+            "value": "h6",
+            "title": "Heading 6"
+          },
+          {
+            "value": "blockquote",
+            "title": "Quote"
+          }
+        ],
+        "of": [],
+        "type": "block"
+      }
+    ],
+    "name": "richText",
+    "type": "array"
+  },
+  {
+    "of": [
+      {
+        "marks": {
+          "annotations": [
+            {
+              "fields": [
+                {
+                  "to": [
+                    {
+                      "type": "homePage"
+                    },
+                    {
+                      "type": "projectPage"
+                    },
+                    {
+                      "type": "worksPage"
+                    }
+                  ],
+                  "name": "to",
+                  "type": "reference"
+                },
+                {
+                  "initialValue": false,
+                  "name": "arrow",
+                  "type": "boolean",
+                  "title": "With Arrow"
+                }
+              ],
+              "name": "internalLink",
+              "type": "object"
+            },
+            {
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/",
+                                "/^mailto$/",
+                                "/^tel$/"
+                              ],
+                              "allowRelative": true,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ],
+                      "level": "error"
+                    }
+                  ],
+                  "name": "url",
+                  "type": "url",
+                  "title": "URL"
+                }
+              ],
+              "name": "externalLink",
+              "type": "object"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "em",
+              "title": "Italic"
+            },
+            {
+              "value": "year",
+              "title": "Year"
+            }
+          ]
+        },
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          }
+        ],
+        "of": [],
+        "type": "block"
+      }
+    ],
+    "name": "richTextSimple",
+    "type": "array",
+    "title": "Rich Text (Simple)"
+  },
+  {
+    "fields": [
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/",
+                      "/^mailto$/",
+                      "/^tel$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "url",
+        "type": "url",
+        "title": "URL"
+      }
+    ],
+    "name": "externalLink",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "to": [
+          {
+            "type": "homePage"
+          },
+          {
+            "type": "projectPage"
+          },
+          {
+            "type": "worksPage"
+          }
+        ],
+        "name": "to",
+        "type": "reference"
+      }
+    ],
+    "name": "internalLink",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Image",
+              "value": "image"
+            },
+            {
+              "title": "Video",
+              "value": "video"
+            }
+          ],
+          "layout": "radio",
+          "direction": "horizontal"
+        },
+        "initialValue": "image",
+        "name": "mediaType",
+        "type": "string"
+      },
+      {
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "accept": "video/*"
+        },
+        "fields": [
+          {
+            "name": "aspectRatio",
+            "type": "number"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "video",
+        "type": "file"
+      }
+    ],
+    "name": "media",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Internal",
+              "value": "internal"
+            },
+            {
+              "title": "External",
+              "value": "external"
+            },
+            {
+              "title": "Contact",
+              "value": "contact"
+            },
+            {
+              "title": "Information Toggle",
+              "value": "information"
+            }
+          ],
+          "layout": "radio",
+          "direction": "horizontal"
+        },
+        "initialValue": "internal",
+        "name": "type",
+        "type": "string"
+      },
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "to": [
+          {
+            "type": "homePage"
+          },
+          {
+            "type": "projectPage"
+          },
+          {
+            "type": "worksPage"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "to",
+        "type": "reference"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/",
+                      "/^mailto$/",
+                      "/^tel$/"
+                    ],
+                    "allowRelative": true,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "url",
+        "type": "url",
+        "title": "URL"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/",
+                              "/^mailto$/",
+                              "/^tel$/"
+                            ],
+                            "allowRelative": true,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              }
+            ],
+            "type": "object",
+            "name": "childLink"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "childLinks",
+        "type": "array"
+      }
+    ],
+    "name": "link",
+    "type": "object"
+  }
+]
